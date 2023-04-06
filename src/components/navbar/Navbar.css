@@ -1,0 +1,48 @@
+.nav-link {
+
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: space-around;    
+    font-size: 17px;
+    margin-left: 45px;
+    padding: 5px;
+    text-shadow: 1px 1px rgba(255, 254, 254, 0.55);
+    text-decoration: none;
+    color:white;
+    text-decoration: none;
+
+}
+
+.logo {
+
+    width: 280px;
+    height: 160px;
+    align-items: center;
+    padding: 40px;
+    justify-content: center;
+    margin-block-start: 40px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.car{
+    width: 70px
+}
+.carrito-cantidad {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-left: 5px;
+    }

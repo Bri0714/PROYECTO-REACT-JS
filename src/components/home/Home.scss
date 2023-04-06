@@ -1,0 +1,90 @@
+.home{
+    background-image: linear-gradient(rgb(3, 91, 3),black);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-attachment: fixed;
+}
+
+.home{
+    display: grid;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    align-items: stretch;
+    justify-items: end;
+}
+
+
+.importantisimo{
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    
+    p {
+        font-size: 20px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: rgba(3, 91, 3, 0.057);
+        text-align: justify;
+        color: #fffafa;
+    }
+    
+}
+
+
+.abajo{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    margin-bottom: 20px;
+        .imagen-inferior {
+            background-image: url('./img/imagen2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    
+}
+
+.arriba{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 25px;
+    margin-bottom: 20px;
+    .imagen-responsive{
+        background-image: url('./img/imagen1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.arriba, .nuevas-imagenes{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    margin-bottom: 20px;
+    .imagen-responsive{
+    background-size: cover
+    }
+}

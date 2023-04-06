@@ -1,0 +1,25 @@
+.title{
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000;
+    text-align: center;
+    margin: 0.5em;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+.titulos{
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000;
+    text-align: center;
+    margin: 0.5em;
+    margin-bottom: 40px;
+}
+
+.g-4, .gy-4 {
+    --bs-gutter-y: 3rem;
+}
+.g-4, .gx-4 {
+    --bs-gutter-x: 4rem;
+    margin-bottom: 50px;
+}
