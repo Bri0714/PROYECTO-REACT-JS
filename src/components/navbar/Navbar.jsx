@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { BsCart2 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext';
 
-const Navbar = ({ handleSearch, cantidadEnCarrito }) => {
+const Navbar = ({ handleSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const { cart } = useCartContext();
+    const [cartLength, setCartLength] = useState(0);
+
+    useEffect(() => {
+        let totalItems = 0;
+        for (const product of cart) {
+            totalItems += product.quantity;
+        }
+        setCartLength(totalItems);
+    }, [cart]);
 
     const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
@@ -16,13 +27,11 @@ const Navbar = ({ handleSearch, cantidadEnCarrito }) => {
     };
 
     return (
-        <nav className="navbar bg-black navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-green">
             <div className="container">
-                <div className="position-absolute right-50">
+                <Link to="/" className="navbar-brand">
                     <img src="./img/logo.jpg" className="logo" alt="Logo Tienda de Deportes" />
-                </div>
-            </div>
-            <div>
+                </Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -36,42 +45,40 @@ const Navbar = ({ handleSearch, cantidadEnCarrito }) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
+                    <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <Link to="/" className="text-decoration-none">
-                                <p className="nav-link ">Inicio</p>
+                            <Link to="/" className="nav-link">
+                                Inicio
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/productos" className="text-decoration-none">
-                                <p className="nav-link">Productos</p>
+                            <Link to="/productos" className="nav-link">
+                                Productos
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/Carrito" className="text-decoration-none">
-                                <p className="nav-link">
-                                    {' '}
-                                    Carrito{' '}
-                                    <span className="carrito-cantidad">{cantidadEnCarrito}</span>
-                                    <BsCart2 className="car " />
-                                </p>
+                            <Link to="/Carrito" className="nav-link">
+                                Carrito <BsCart2 className="car" />
+                                {cartLength > 0 && (
+                                    <span className="carrito-cantidad">{cartLength}</span>
+                                )}
                             </Link>
                         </li>
-                        <form className="d-flex" onSubmit={handleSubmit}>
-                            <input
-                                id="Buscador"
-                                className="form-control me-2"
-                                type="search"
-                                placeholder="Busca tu producto preferido"
-                                aria-label="Search"
-                                value={searchTerm}
-                                onChange={handleInputChange}
-                            />
-                            <button id="Boton" className="btn btn-outline-light" type="submit">
-                                Buscar
-                            </button>
-                        </form>
                     </ul>
+                    <form className="d-flex" onSubmit={handleSubmit}>
+                        <input
+                            id="Buscador"
+                            className="form-control me-2"
+                            type="search"
+                            placeholder="Busca tu producto preferido"
+                            aria-label="Search"
+                            value={searchTerm}
+                            onChange={handleInputChange}
+                        />
+                        <button id="Boton" className="btn btn-outline-light" type="submit">
+                            Buscar
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>

@@ -10,6 +10,8 @@ import { collection, getDocs } from 'firebase/firestore';
 import Footer from './components/footer/Footer';
 import Spinner from './components/spinner/Spinner';
 import CartProvider from './context/CartContext';
+import CartView from './components/CartView/CartView';
+
 
 
 function App() {
@@ -61,7 +63,9 @@ function App() {
             path='/productos/:id'
             element={<ProductItem productos={productos} />}
           />
+          <Route path='/Carrito' element={<CartView />} />
           <Route path='*' element={<h1>404 Not Found</h1>} />
+
         </Routes>
       </div>
       <Footer/>
