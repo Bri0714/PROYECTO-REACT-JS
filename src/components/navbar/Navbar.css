@@ -23,13 +23,13 @@
 .nav-link {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 17px;
-    text-shadow: 1px 1px green;
+    text-shadow: 1px  green;
     /* cambia el text shadow a verde */
     color: white;
 }
 
 .nav-link:hover {
-    text-shadow: 1px 1px green;
+    text-shadow: 0.5px 0.5px rgb(12, 255, 12);
     /* aumenta el tamaño del text shadow cuando se pasa el mouse por encima */
 }
 
